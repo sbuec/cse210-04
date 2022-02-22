@@ -1,5 +1,8 @@
 import pyray as pr
 import rock as Rk
+import utils
+import input
+
 
 def main():
     HEIGHT = 450
