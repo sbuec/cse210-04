@@ -6,6 +6,7 @@ Steven Buechele = sbuec,
 
 Eric Woll = steelheart96, 
 	*Rock class
+	*Gem class
 
 Tebakaro Tione = tebtione, 
 
