@@ -1,5 +1,7 @@
 import pyray as pr
-import rock as Rk
+import gem as gm
+import rock as rk
+import player as pl
 import utils
 import services.keyboard_service
 import services.video_service
@@ -15,17 +17,23 @@ WIDTH = 800
 FPS = 60
 CAPTION = "Hello Pyray"
 
+GEM_AMOUNT = 20
+ROCK_AMOUNT = 150
 
 def main():
-
     '''
     Creating objects and settings that will be used 
     '''
     pr.init_window(WIDTH, HEIGHT, CAPTION)
     pr.set_target_fps(FPS)
 
-    rock_texture = Rk.Rock.load_texture('O', 12, pr.WHITE)
-    Rk.Rock.load_asteroid(200, WIDTH, HEIGHT, rock_texture)
+    # Loads rocks
+    rock_texture = rk.Rock.load_texture('O', 12, pr.WHITE)
+    rk.Rock.load_asteroid(ROCK_AMOUNT, WIDTH, HEIGHT, rock_texture)
+
+     # Loads Gems
+    gem_texture = gm.Gem.load_texture('*', 12, pr.GREEN)
+    gm.Gem.load_asteroid(GEM_AMOUNT, WIDTH, HEIGHT, gem_texture)
 
     #creating instance of keyboard service
     ks = services.keyboard_service.KeyboardService()
@@ -41,22 +49,18 @@ def main():
         #Printing output
         pr.begin_drawing()
         pr.clear_background(pr.BLACK)
-        Rk.Rock.draw_asteriod()
-        
+
+        # The two lines below are the reason for the 4 variables needed in the player class
+        rk.Rock.draw_asteroid(player)
+        gm.Gem.draw_asteroid(player)
+
         #checking for input
         #currently an example to show that input_direction is working
         direction = ks.input_direction()
         if direction == 1:
             pr.draw_text("Working", 50, 50, 20, pr.WHITE)
 
-
-
-
         pr.end_drawing()
-
-
-
-
 
     pr.close_window()
 
