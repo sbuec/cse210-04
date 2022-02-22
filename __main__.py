@@ -14,9 +14,6 @@ def main():
     pr.init_window(WIDTH, HEIGHT, "Hello Pyray")
     pr.set_target_fps(60)
 
-    player_texture = pl.Player.load_texture('#', 1, pr.WHITE)
-    player = pl.Player(WIDTH, HEIGHT, player_texture)
-
     rock_texture = rk.Rock.load_texture('O', 12, pr.WHITE)
     rk.Rock.load_asteroid(ROCK_AMOUNT, WIDTH, HEIGHT, rock_texture)
 
@@ -30,8 +27,7 @@ def main():
 
         pr.clear_background(pr.BLACK)
 
-        player.draw_player()
-
+        # The two lines below are the reason for the 4 variables needed in the player class
         rk.Rock.draw_asteroid(player)
         gm.Gem.draw_asteroid(player)
 
