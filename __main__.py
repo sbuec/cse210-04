@@ -3,8 +3,7 @@ import gem as gm
 import rock as rk
 import player as pl
 import utils
-import services.keyboard_service
-import services.video_service
+import services as Sv
 #import input
 
 
@@ -36,7 +35,7 @@ def main():
     gm.Gem.load_asteroid(GEM_AMOUNT, WIDTH, HEIGHT, gem_texture)
 
     #creating instance of keyboard service
-    ks = services.keyboard_service.KeyboardService()
+    ks = Sv.KeyboardService()
 
     while not pr.window_should_close():
         '''
