@@ -1,7 +1,8 @@
 import pyray as pr
-import rock as rk
 import gem as gm
 import player as pl
+import utils
+import input
 
 def main():
     HEIGHT = 450
