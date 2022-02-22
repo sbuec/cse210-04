@@ -2,6 +2,9 @@ from Asteriod import Asteriod
 from pyray import Texture
 
 class Rock(Asteriod):
+    '''
+    A class of Asteroids
+    '''
 
     _on_screen = []
     _all_created = []

@@ -1,6 +1,7 @@
 import pyray as pr
 import gem as gm
 import player as pl
+import rock as rk
 import utils
 import input
 
