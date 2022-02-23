@@ -1,4 +1,4 @@
-import services.video_service as vs
+import video_service as vs
 
 
 '''

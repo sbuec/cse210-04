@@ -21,6 +21,10 @@ class Game:
         pr.init_window(self.width, self.height, self.caption)
         pr.set_target_fps(self.fps)
 
+        # Loads player
+        player_texture = pl.Player.load_texture('#', 12 ,pr.WHITE)
+        player = pl.Player(self.width, self.height, player_texture)
+
         # Loads rocks
         rock_texture = rk.Rock.load_texture('O', 12, pr.WHITE)
         rk.Rock.load_asteroid(self.rock_amount, self.width, self.height, rock_texture)
@@ -38,15 +42,13 @@ class Game:
             *Calculate automatic changes to the output
             '''
 
-            #Keyboard update
-            position_update = ks.KeyboardService.input_direction()
-
-            #player update.......
-            #player(position_update)
-            
-            #Printing output
             pr.begin_drawing()
             pr.clear_background(pr.BLACK)
+
+            #Keyboard update
+            pos_update = ks.KeyboardService.input_direction()
+            player.update_position(pos_update)
+            player.draw_player()
 
             # The two lines below are the reason for the 4 variables needed in the player class
             rk.Rock.draw_asteroid(player)

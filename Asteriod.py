@@ -136,4 +136,6 @@ class Asteriod(Actor):
         '''
         if cls.check_collision(asteroid, player):
             cls._on_screen.remove(asteroid)
+            asteroid.pos_y = 0
             player.points += asteroid.points
+            print(player.points)
