@@ -1,3 +1,4 @@
+import numpy
 from Asteriod import Actor
 
 class Player(Actor):
@@ -14,5 +15,7 @@ class Player(Actor):
     def draw_player(self):
         self.draw_rectangle(self.texture, self.pos_x, self.pos_y)
 
-    def update_position(self, x_pos_update):
-        self.pos_x += x_pos_update
+    def update_position(self, pos_update):
+        self.pos_x += pos_update[0]
+        self.pos_y += pos_update[1]
+        self.pos_y = numpy.clip(self.pos_y, 360, 440)
