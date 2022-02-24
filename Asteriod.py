@@ -1,3 +1,4 @@
+import random
 import pyray as pr
 from random import randint
 
@@ -17,7 +18,7 @@ class Actor:
         return pr.image_text(character, font_size, color)
 
     @staticmethod
-    def load_texture(character, font_size, color) -> pr.Texture:
+    def load_texture(character, font_size, color = 0) -> pr.Texture:
         '''
         Takes a string and makes it a pr.Texture
 
@@ -138,4 +139,9 @@ class Asteriod(Actor):
             cls._on_screen.remove(asteroid)
             asteroid.pos_y = 0
             player.points += asteroid.points
-            print(player.points)
+            # 0 point minimum
+            if(player.points <= 0):
+                player.points = 0
+
+            # Print points
+            print(f"Points: {player.points}")

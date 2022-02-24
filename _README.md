@@ -12,6 +12,7 @@ Eric Woll = steelheart96,
 Tebakaro Tione = tebtione, 
 
 Connor Baltich = canadianbleach
+	*Comet class
 
 Title: Greed
 
