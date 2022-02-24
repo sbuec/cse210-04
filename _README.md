@@ -7,11 +7,12 @@ Steven Buechele = sbuec,
 Eric Woll = steelheart96, 
 	*Rock class
 	*Gem class
+	*Player class
 
 Tebakaro Tione = tebtione, 
 
 Connor Baltich = canadianbleach
-	*Player class
+	*Comet class
 
 Title: Greed
 
