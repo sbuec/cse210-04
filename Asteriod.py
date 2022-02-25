@@ -142,6 +142,3 @@ class Asteriod(Actor):
             # 0 point minimum
             if(player.points <= 0):
                 player.points = 0
-
-            # Print points
-            print(f"Points: {player.points}")
