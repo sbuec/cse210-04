@@ -2,7 +2,6 @@ import pyray
 
 class KeyboardService:
 
-    @staticmethod
     def input_direction():
         update_pos = [0, 0]
 
